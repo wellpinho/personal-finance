@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface Item {
     title: string
@@ -8,6 +9,12 @@ interface Item {
 }
 
 export function ResumeItem({ title, icon, textColor, value }: Item) {
+    const [values, setValues] = useState('');
+
+    useEffect(() => {
+        setValues(value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }));
+    }, []);
+
     return (
         <div className="
             flex 
@@ -28,7 +35,7 @@ export function ResumeItem({ title, icon, textColor, value }: Item) {
                 {icon === 'up' && <Image src="/arrow-up.svg" alt="up" width={20} height={20} />}
                 {icon === 'down' && <Image src="/arrow-down.svg" alt="down" width={20} height={20} />}
             </div>
-            <h2 className={`font-extrabol text-5xl ${textColor}`}>{value}</h2>
+            <h2 className={`font-extrabol text-5xl ${textColor}`}>{values}</h2>
         </div>
     );
 }
