@@ -1,6 +1,8 @@
 # Rules
 Criar um diagrama relacional para um sistema de finanças pessoais envolve identificar as principais entidades e suas relações. Aqui está uma lista das possíveis entidades e suas relações:
 
+um exemplo simples para apoio no desenvolvimento: https://chatgpt.com/c/230a03d0-60e3-4064-b81f-8c1fb9617219
+
 1. Usuário (User)
 Atributos: ID_Usuário (PK), Nome, Email, Senha, Data_Cadastro
 Relação: Um usuário pode ter várias contas bancárias, transações e orçamentos.
